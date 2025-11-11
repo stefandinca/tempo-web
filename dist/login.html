@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autentificare - Tempo</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="./tailwind-styles.css" rel="stylesheet">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body class="font-sans antialiased bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center py-6">
+                    <a href="/"> <img class="w-32" src="img/tempo-logo-dark.png" alt="Tempo Logo"/></a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/register" class="text-[#2860AC] hover:text-blue-600 font-medium transition">
+                        Creare cont
+                    </a>
+                    <a href="/" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium transition">
+                        Înapoi la site
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <div class="pt-24 pb-16 flex items-center justify-center min-h-screen">
+        <div class="max-w-md w-full mx-4">
+            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+                <!-- Header -->
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                        Bun venit înapoi!
+                    </h1>
+                    <p class="text-gray-600">
+                        Autentifică-te în contul tău Tempo
+                    </p>
+                </div>
+
+                <!-- Alert Messages -->
+                <div id="alertMessage" class="hidden mb-6 p-4 rounded-lg"></div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="space-y-6">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition"
+                            placeholder="exemplu@email.com"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                            Parolă
+                        </label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition"
+                            placeholder="••••••••"
+                        >
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="w-4 h-4 text-[#2860AC] border-gray-300 rounded focus:ring-[#2860AC]">
+                            <span class="ml-2 text-sm text-gray-600">Ține-mă minte</span>
+                        </label>
+                        <a href="#" class="text-sm text-[#2860AC] hover:text-blue-600 transition">
+                            Ai uitat parola?
+                        </a>
+                    </div>
+
+                    <button
+                        type="submit"
+                        id="loginButton"
+                        class="w-full bg-[#2860AC] hover:bg-blue-600 text-white py-3 rounded-lg font-semibold text-lg transition shadow-lg hover:shadow-xl flex items-center justify-center"
+                    >
+                        <span id="buttonText">Autentifică-te</span>
+                        <svg id="loadingSpinner" class="hidden animate-spin ml-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </button>
+                </form>
+
+                <!-- Divider -->
+                <div class="mt-8 text-center">
+                    <p class="text-gray-600">
+                        Nu ai un cont?
+                        <a href="/register" class="text-[#2860AC] hover:text-blue-600 font-semibold transition">
+                            Creează cont gratuit
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="mt-6 text-center text-sm text-gray-600">
+                <p>Prin autentificare, accepți
+                    <a href="#" class="text-[#2860AC] hover:text-blue-600 transition">Termenii și Condițiile</a>
+                    și
+                    <a href="#" class="text-[#2860AC] hover:text-blue-600 transition">Politica de Confidențialitate</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const alertMessage = document.getElementById('alertMessage');
+        const loginButton = document.getElementById('loginButton');
+        const buttonText = document.getElementById('buttonText');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+
+        function showAlert(message, type = 'error') {
+            alertMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700', 'border-red-400', 'border-green-400');
+
+            if (type === 'success') {
+                alertMessage.classList.add('bg-green-100', 'text-green-700', 'border', 'border-green-400');
+            } else {
+                alertMessage.classList.add('bg-red-100', 'text-red-700', 'border', 'border-red-400');
+            }
+
+            alertMessage.textContent = message;
+
+            setTimeout(() => {
+                alertMessage.classList.add('hidden');
+            }, 5000);
+        }
+
+        function setLoading(isLoading) {
+            if (isLoading) {
+                loginButton.disabled = true;
+                buttonText.textContent = 'Se autentifică...';
+                loadingSpinner.classList.remove('hidden');
+            } else {
+                loginButton.disabled = false;
+                buttonText.textContent = 'Autentifică-te';
+                loadingSpinner.classList.add('hidden');
+            }
+        }
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            setLoading(true);
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password }),
+                    credentials: 'include'
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showAlert('Autentificare reușită! Redirecționare...', 'success');
+
+                    // Store user data and token
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    localStorage.setItem('token', data.token);
+
+                    // Redirect to home page after 1 second
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 1000);
+                } else {
+                    showAlert(data.message || 'Autentificare eșuată. Vă rugăm să încercați din nou.');
+                    setLoading(false);
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showAlert('A apărut o eroare. Vă rugăm să încercați din nou.');
+                setLoading(false);
+            }
+        });
+    </script>
+</body>
+</html>

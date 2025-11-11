@@ -1,16 +1,29 @@
 {
-  "name": "2",
+  "name": "tempo-web",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Tempo therapy center management platform",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "npx @tailwindcss/cli -i ./src/input.css -o ./dist/tailwind-styles.css  --minify"
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/tailwind-styles.css --minify",
+    "start": "node server.js",
+    "dev:server": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.17",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "express-session": "^1.17.3",
+    "cookie-parser": "^1.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
