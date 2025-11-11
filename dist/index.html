@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo - Platforma Completă de Management pentru Terapie</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="./tailwind-styles.css" rel="stylesheet">
+    <link rel="icon" href="icon.png" type="image/png">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '25281496204836918');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=25281496204836918&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SHH0XQ1MLG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SHH0XQ1MLG');
+</script>
+<body class="font-sans antialiased">
+    
+    <!-- Navigation -->
+    <nav  class="fixed w-full bg-white/95 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center py-6">
+                    
+                    <a href="#hero"> <img class="w-32" src="img/tempo-logo-dark.png"/></a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-[#2860AC] transition">Funcționalități</a>
+                    <a href="#faq" class="text-gray-700 hover:text-[#2860AC] transition">Întrebări Frecvente</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-[#2860AC] transition">Prețuri</a>
+                    <a href="resources.html" class="text-gray-700 hover:text-[#2860AC] transition">Resurse</a>
+                    <a href="#contact" class="text-gray-700 hover:text-[#2860AC] transition">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="http://www.tempoapp.ro/demo" class="hidden sm:inline-block text-[#2860AC] hover:text-blue-600 font-medium transition">
+                        Demo gratuit
+                    </a>
+                    <a href="#contact" class="bg-[#2860AC] hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition shadow-lg hover:shadow-xl">
+                        Programează o întâlnire
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-[url(/img/hero-bg.png)] bg-cover pt-24 pb-16 md:pt-32 md:pb-24 bg-linear-to-br from-blue-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in-up">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-50 leading-tight mb-6">
+                        Platforma Completă de Management pentru
+                        <span class="gradient-text">Centre de Terapie</span>
+                    </h1>
+                    <p class="text-xl mb-8 leading-relaxed text-blue-50">
+                        <span class="font-bold text-blue-500"> Tempo</span> simplifică gestionarea clienților, programărilor, evaluărilor și a feedback-ului într-o singură platformă intuitivă. Concentrează-te pe ceea ce contează: clienții tăi.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="http://www.tempoapp.ro/demo" target="_blank" class="bg-[#2860AC] hover:bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition shadow-xl hover:shadow-2xl text-center">
+                            Programează o întâlnire
+                        </a>
+                        <a href="http://www.tempoapp.ro/demo" target="_blank" class="border-2 border-blue-50 hover:border-[#2860AC] hover:bg-[#2860AC] hover:text-white text-blue-50 px-8 py-4 rounded-full font-semibold text-lg transition shadow-xl hover:shadow-2xl text-center">
+                            Demo gratuit
+                        </a>
+                        
+                    </div>
+                    <div class="mt-8 flex items-center space-x-6 text-sm text-blue-50">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Fără card necesar</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>30 zile gratuit</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Suport dedicat</span>
+                        </div>
+                    </div>
+                </div>
+                <div class=" md:block">
+                    <img src="img/dashboard.png" 
+                         alt="Dashboard Tempo" 
+                         class="hero-image ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#2860AC] mb-4">
+                    Tot ce ai nevoie într-un singur loc
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Tempo oferă toate instrumentele necesare pentru gestionarea eficientă a centrului tău de terapie
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="w-16 h-16 bg-[#EEF2FC] rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-[#2860AC]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#2860AC] mb-3">Programări Inteligente</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Gestionează programările cu ușurință. Vizualizare pe lună, săptămână sau zi, cu filtrare pe terapeut și suport pentru sesiuni recurente.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Filtrare intuitivă</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Sesiuni recurente automate</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Calendar public pentru părinți</span>
+                        </li>
+                    </ul>
+                </div>
+                
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="w-16 h-16 bg-[#EEF2FC] rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-[#2860AC]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#2860AC] mb-3">Gestionare Clienți</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Păstrează toate informațiile clienților organizate și la îndemână. Istoricul complet, documente medicale și date de contact.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Fișe client detaliate</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Stocare informații medicale</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Coduri de acces pentru părinți</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="w-16 h-16 bg-[#EEF2FC] rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-[#2860AC]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#2860AC] mb-3">Urmărire Evoluție</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Monitorizează progresul clienților cu evaluări Portage și logopedice. Grafice interactive și rapoarte detaliate de progres.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Evaluări Portage complete</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Grafice evoluție interactive</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Export rapoarte PDF</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="w-16 h-16 bg-[#EEF2FC] rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-[#2860AC]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#2860AC] mb-3">Facturare Simplă</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Ușurează procesul de facturare. Urmărește încasările, generează facturi și rapoarte financiare lunare pentru fiecare client.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Urmărire încasări intuitivă</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Rapoarte financiare lunare</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Calcul automat sold client</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="w-16 h-16 bg-[#EEF2FC] rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-[#2860AC]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#2860AC] mb-3">Management Echipă</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Controlează accesul și permisiunile. Roluri diferite pentru terapeuți, coordonatori, administratori și părinți.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Roluri și permisiuni</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Izolare date pe terapeut</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Acces personalizat părinți</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="w-16 h-16 bg-[#EEF2FC] rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-[#2860AC]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#2860AC] mb-3">Rapoarte & Analize</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Dashboard-uri intuitive cu statistici în timp real. Vizualizează prezența, performanța echipei și progresul clienților.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Dashboard în timp real</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Statistici prezență clienți</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 check-icon mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Export rapoarte personalizate</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---- FAQ-->
+    <section id="faq" class="py-16 bg-[#EEF2FC] sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-extrabold text-[#2860AC] sm:text-4xl">
+        Întrebări Frecvente (FAQ)
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Răspunsuri clare la cele mai comune întrebări despre platforma Tempo.
+      </p>
+    </div>
+
+    <div class="mt-12 max-w-3xl mx-auto divide-y-2 divide-gray-200">
+      
+      <div class="py-6">
+        <details class="group">
+          <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 cursor-pointer list-none">
+            Folosesc deja Excel pentru programări. De ce este Tempo mai bun?
+            <span class="ml-6 h-7 flex items-center">
+              <svg class="h-6 w-6 transform group-open:-rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pr-12 text-base text-gray-700">
+            <p>Excel (sau altă aplicație similară pentru programări) este un tabel <strong>pasiv</strong>. O programare este doar un text într-o celulă. În Tempo, o programare este o entitate <strong>activă</strong> care conectează automat un client, un terapeut, un serviciu (cu prețul lui) și obiectivele terapeutice (programele) lucrate.</p>
+            <p class="mt-2">Această conectare înseamnă că atunci când bifați, de exemplu prezența, sistemul știe automat să adauge sesiunea la facturare și să o lege de istoricul de progres al copilului. Excel nu poate automatiza aceste procese.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="py-6">
+        <details class="group">
+          <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 cursor-pointer list-none">
+            Prețul licenței pare mare pentru centrul meu mic. Cum se justifică investiția?
+            <span class="ml-6 h-7 flex items-center">
+              <svg class="h-6 w-6 transform group-open:-rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pr-12 text-base text-gray-700">
+            <p>Investiția se recuperează prin economisirea de timp administrativ. Să presupunem că aveti un centru cu 6 terapeuti. Fiecare din cei 6 terapeuți petrece 20 de minute pe zi transferând notițe de pe hârtie în Excel. Aceasta înseamnă 40 de ore de muncă administrativă pe lună, plătite la preț de terapeut.</p>
+            <p class="mt-2">Tempo elimină majoritatea acestor ore. Facturarea, care poate dura zile, devine un proces de câteva minute. Rapoartele de progres sunt generate automat. Veți economisi zeci de ore în fiecare lună.</p>
+          </div>
+        </details>
+      </div>
+      
+      <div class="py-6">
+        <details class="group">
+          <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 cursor-pointer list-none">
+            Sunt un practician independent. De ce aș folosi Tempo și nu Google Calendar?
+            <span class="ml-6 h-7 flex items-center">
+              <svg class="h-6 w-6 transform group-open:-rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pr-12 text-base text-gray-700">
+            <p>Pentru un practician independent, dumneavoastră sunteți și terapeut, și administrator, și contabil. Tempo acționează ca asistentul dumneavoastră personal:</p>
+            <ul class="list-disc list-inside mt-2 space-y-2">
+              <li><strong>Facturare Instantanee:</strong> Vedeți exact cât aveți de încasat, fără calcule manuale, și urmăriți restanțele.</li>
+              <li><strong>Profesionalism Clinic:</strong> Generați grafice de evoluție și rapoarte profesionale cu un singur click.</li>
+              <li><strong>Portal pentru Părinți:</strong> Reduceți numărul de telefoane. Părinții pot vedea singuri programul și temele lunare.</li>
+            </ul>
+            <p class="mt-4">Acestea sunt facilități pe care aplicațiile generice nu le pot oferi.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="py-6">
+        <details class="group">
+          <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 cursor-pointer list-none">
+            Terapeuții mei notează pe hârtie. Trebuie să stea cu laptopul în ședință?
+            <span class="ml-6 h-7 flex items-center">
+              <svg class="h-6 w-6 transform group-open:-rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pr-12 text-base text-gray-700">
+            <p><strong>Absolut nu.</strong> Tempo este conceput pentru a fi folosit pe telefon sau tabletă <strong>după</strong> ședință. Fluxul durează sub 30 de secunde: terapeutul deschide aplicația, bifează prezența și programele lucrate. Gata.</p>
+            <p class="mt-2">În acele 30 de secunde, a actualizat automat facturarea și graficul de progres al copilului.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="py-6">
+        <details class="group">
+          <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 cursor-pointer list-none">
+            Pot adăuga propriile mele servicii și programe terapeutice?
+            <span class="ml-6 h-7 flex items-center">
+              <svg class="h-6 w-6 transform group-open:-rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pr-12 text-base text-gray-700">
+            <p><strong>Da.</strong> Aveți control total. Din panoul de "Servicii", puteți adăuga, edita sau șterge orice tip de serviciu și seta prețul de bază pentru fiecare. De asemenea, puteți adăuga un număr nelimitat de programe terapeutice personalizate care vor apărea imediat în fereastra de scor a sesiunii.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="py-6">
+        <details class="group">
+          <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 cursor-pointer list-none">
+            Ce se întâmplă dacă folosesc o evaluare care nu este în aplicație (ex: ABLLS)?
+            <span class="ml-6 h-7 flex items-center">
+              <svg class="h-6 w-6 transform group-open:-rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pr-12 text-base text-gray-700">
+            <p>Platforma este construită modular pentru a permite adăugarea de noi tipuri de evaluări. În prezent avem Portage și Evaluare Logopedică. Integrarea unui nou formular de evaluare standardizat este un serviciu de customizare pe care îl putem discuta, costul fiind mult redus deoarece fundația tehnică există deja.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="py-6">
+        <details class="group">
+          <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 cursor-pointer list-none">
+            Ce văd exact părinții în "Portalul pentru Părinți"? Pot vedea notițele mele private?
+            <span class="ml-6 h-7 flex items-center">
+              <svg class="h-6 w-6 transform group-open:-rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pr-12 text-base text-gray-700">
+            <p><strong>Nu.</strong> Confidențialitatea este esențială. Părinții <em>nu</em> văd notițele private ale terapeuților sau scorurile detaliate ale sesiunii (opțional). Portalul le oferă acces controlat doar la programul copilului, istoricul de prezență, graficele de evoluție (ex: Portage) și tema lunară pe care o stabiliți dumneavoastră.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="py-6">
+        <details class="group">
+          <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 cursor-pointer list-none">
+            Cât de intuitivă este aplicația pentru terapeuții mei?
+            <span class="ml-6 h-7 flex items-center">
+              <svg class="h-6 w-6 transform group-open:-rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pr-12 text-base text-gray-700">
+            <p>Tempo este conceput pentru a fi extrem de intuitiv. Interfața principală este un <strong>Panou de control (Dashboard)</strong> care arată fiecărui terapeut programul zilei. Fluxul de lucru este vizual și optimizat pentru tabletă/telefon: 1. Apasă pe ședința terminată. 2. Bifează prezența. 3. Notează programele lucrate. Nu este nevoie de tastatură sau de navigare complexă; întregul proces durează sub 30 de secunde.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="py-6">
+        <details class="group">
+          <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 cursor-pointer list-none">
+            Ce facem cu datele noastre existente din Excel sau alte fișiere?
+            <span class="ml-6 h-7 flex items-center">
+              <svg class="h-6 w-6 transform group-open:-rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pr-12 text-base text-gray-700">
+            <p>Înțelegem că nu porniți de la zero. Platforma este construită pe o bază de date SQL structurată. Oferim un serviciu unic de <strong>migrare a datelor</strong>. Ne puteți furniza fișierele Excel, iar noi vom aduce automat în platformă toată lista de clienți, terapeuți și chiar istoricul evaluărilor (cum ar fi scorurile Portage). Astfel, nu veți pierde istoricul clinic și nu va trebui să reintroduceți manual sute de înregistrări.</p>
+          </div>
+        </details>
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-linear-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#2860AC] mb-4">
+                    Prețuri Simple și Transparente
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Alege planul potrivit pentru centrul tău. Toate planurile includ 30 de zile perioadă de probă gratuită.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="price-card bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-[#2860AC] mb-2">Starter</h3>
+                        <p class="text-gray-600 mb-6">Perfect pentru practicieni independenti</p>
+                       <div class="flex items-baseline justify-center">
+                            
+                            <span class="text-5xl font-bold text-[#2860AC]">49 €</span>
+                            <span class="text-2xl text-gray-600 ml-2">/lună</span>
+                        </div>
+                        <p class="text-gray-500 mt-2"></p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">1<strong> utilizator (terapeut/admin)</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Până la <strong>30 clienți activi</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Calendar și programări</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Gestionare clienți</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Evaluări</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Rapoarte de bază</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Suport email</span>
+                        </li>
+                    </ul>
+                   <a href="#contact"> <button href="#contact" class="w-full border-2 border-[#2860AC] text-[#2860AC] hover:bg-[#2860AC] hover:text-white font-semibold py-4 rounded-full transition">
+                        Contactează-ne
+                    </button></a>
+                </div>
+
+                <!-- Professional Plan (Featured) -->
+                <div class="price-card featured bg-white rounded-2xl shadow-2xl p-8 border-4 border-[#2860AC] transform scale-105">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-[#2860AC] mb-2">Professional</h3>
+                        <p class="text-gray-600 mb-6">Pentru centre în creștere</p>
+                        <div class="flex items-baseline justify-center">
+                            <span class="text-5xl font-bold text-[#2860AC]">99 €</span>
+                            <span class="text-2xl text-gray-600 ml-2">/lună</span>
+                        </div>
+                        <p class="text-gray-500 mt-2"></p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Până la <strong>5 utilizatori</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Până la<strong> 100 de clienți</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Toate funcționalitățile</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700"><strong>Facturare automată</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700"><strong>Portal părinți</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700"><strong>Permisiuni pe baza de roluri (terapeut, coordonator, admin)</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700"><strong>Suport prioritar</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Training inclus</span>
+                        </li>
+                    </ul>
+                   <a href="#contact"> <button href="#contact" class="w-full gradient-bg hover:opacity-90 text-white font-semibold py-4 rounded-full transition shadow-lg hover:shadow-xl">
+                        Contactează-ne
+                    </button></a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="price-card bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-[#2860AC] mb-2">Enterprise</h3>
+                        <p class="text-gray-600 mb-6">Pentru centre mari</p>
+                       <div class="flex items-baseline justify-center">
+                            <span class="text-5xl font-bold text-[#2860AC]">179 €</span>
+                            <span class="text-2xl text-gray-600 ml-2">/lună</span>
+                        </div>
+                        
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700"><strong>Terapeuți nelimitați</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700"><strong>Clienți nelimitați</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Toate funcționalitățile Professional</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700"><strong>Manager de cont dedicat</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700"><strong>API access</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700"><strong>Funcționalități custom</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700"><strong>SLA garantat</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 check-icon mr-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Onboarding dedicat</span>
+                        </li>
+                    </ul>
+                  <a href="#contact">  <button  class="w-full border-2 border-[#2860AC] text-[#2860AC] hover:bg-[#2860AC] hover:text-white font-semibold py-4 rounded-full transition">
+                        Contactează-ne
+                    </button></a>
+                </div>
+            </div>
+
+            <p class="text-center text-gray-600 mt-12 text-lg">
+                🎉 <strong>Contactează-ne</strong> pentru o ofertă <span class="text-[#2860AC] font-bold">personalizată</span> în funcție de nevoile tale.
+            </p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section 
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#2860AC] mb-4">
+                    Ce spun clienții noștri
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Centre de terapie care și-au transformat activitatea cu Tempo
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed">
+                        "Tempo ne-a simplificat enorm munca. Am trecut de la foi de calcul și agende fizice la un sistem complet automatizat. Economisim cel puțin 10 ore pe săptămână!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center font-bold text-purple-600 mr-4">
+                            MC
+                        </div>
+                        <div>
+                            <p class="font-semibold text-[#2860AC]">Maria Constantin</p>
+                            <p class="text-sm text-gray-600"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed">
+                        "Părinții sunt încântați de portalul dedicat. Pot vedea progresul copiilor lor în timp real și au acces la programări. Transparență totală!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600 mr-4">
+                            AP
+                        </div>
+                        <div>
+                            <p class="font-semibold text-[#2860AC]">Andrei Popescu</p>
+                            <p class="text-sm text-gray-600"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed">
+                        "Evaluările Portage și urmărirea progresului sunt incredibil de intuitive. Graficele ne arată clar evoluția fiecărui copil. Un instrument esențial!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center font-bold text-green-600 mr-4">
+                            EV
+                        </div>
+                        <div>
+                            <p class="font-semibold text-[#2860AC]">Elena Vasilescu</p>
+                            <p class="text-sm text-gray-600"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <section id="comparison-detailed" class="py-20 bg-[#EEF2FC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#2860AC] mb-4">
+                Comparație Funcționalități Cheie
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                De ce să înlocuiți uneltele generice cu o platformă specializată? Vedeți diferența în fluxul de lucru zilnic.
+            </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left min-w-[800px]">
+                    <thead class="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                            <th class="px-6 py-5 text-lg font-semibold text-[#2860AC] w-2/5">Funcționalitate</th>
+                            <th class="px-6 py-5 text-center text-lg font-semibold text-gray-700">Pix & Hârtie </th>
+                            <th class="px-6 py-5 text-center text-lg font-semibold text-gray-700">Google Calendar / Excel</th>
+                            <th class="px-6 py-5 text-center text-lg font-semibold text-white bg-[#2860AC]">Tempo</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        
+                        <tr class="border-b border-gray-100">
+                            <td class="px-6 py-6 font-semibold text-gray-800">Programări</td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-yellow-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm1-10a1 1 0 00-1 1v4a1 1 0 102 0V5a1 1 0 00-1-1z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Manual, Pasiv</span>
+                            </td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-yellow-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm1-10a1 1 0 00-1 1v4a1 1 0 102 0V5a1 1 0 00-1-1z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Digital, dar Pasiv</span>
+                            </td>
+                            <td class="px-6 py-6 text-center bg-green-50/50">
+                                <svg class="w-7 h-7 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Activ & Inteligent</span>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b border-gray-100">
+                            <td class="px-6 py-6 font-semibold text-gray-800">Evidență Clienți</td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-yellow-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm1-10a1 1 0 00-1 1v4a1 1 0 102 0V5a1 1 0 00-1-1z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Separat (Dosare)</span>
+                            </td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Inexistent</span>
+                            </td>
+                            <td class="px-6 py-6 text-center bg-green-50/50">
+                                <svg class="w-7 h-7 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Integrat & Centralizat</span>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b border-gray-100">
+                            <td class="px-6 py-6 font-semibold text-gray-800">Evaluări & Rapoarte</td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-yellow-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm1-10a1 1 0 00-1 1v4a1 1 0 102 0V5a1 1 0 00-1-1z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Manual (Pe Hârtie)</span>
+                            </td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Inexistent</span>
+                            </td>
+                            <td class="px-6 py-6 text-center bg-green-50/50">
+                                <svg class="w-7 h-7 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Automat & Grafice</span>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b border-gray-100">
+                            <td class="px-6 py-6 font-semibold text-gray-800">Portal Public (Calendar)</td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Inexistent</span>
+                            </td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-yellow-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm1-10a1 1 0 00-1 1v4a1 1 0 102 0V5a1 1 0 00-1-1z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Parțial (Partajare)</span>
+                            </td>
+                            <td class="px-6 py-6 text-center bg-green-50/50">
+                                <svg class="w-7 h-7 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Integrat (Pt. Părinți)</span>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b border-gray-100">
+                            <td class="px-6 py-6 font-semibold text-gray-800">Acces Părinți</td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Inexistent</span>
+                            </td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Inexistent</span>
+                            </td>
+                            <td class="px-6 py-6 text-center bg-green-50/50">
+                                <svg class="w-7 h-7 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Portal Dedicat & Securizat</span>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b border-gray-100">
+                            <td class="px-6 py-6 font-semibold text-gray-800">Management Echipă</td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Inexistent</span>
+                            </td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-yellow-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm1-10a1 1 0 00-1 1v4a1 1 0 102 0V5a1 1 0 00-1-1z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Limitat (Partajare)</span>
+                            </td>
+                            <td class="px-6 py-6 text-center bg-green-50/50">
+                                <svg class="w-7 h-7 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Roluri & Permisiuni</span>
+                            </td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="px-6 py-6 font-semibold text-gray-800">Facturare Simplificată</td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-yellow-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm1-10a1 1 0 00-1 1v4a1 1 0 102 0V5a1 1 0 00-1-1z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">100% Manual</span>
+                            </td>
+                            <td class="px-6 py-6 text-center">
+                                <svg class="w-7 h-7 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Inexistent</span>
+                            </td>
+                            <td class="px-6 py-6 text-center bg-green-50/50">
+                                <svg class="w-7 h-7 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></svg>
+                                <span class="text-xs text-gray-500 mt-1 block">Automat & Instantaneu</span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-linear-to-br from-blue-600 to-purple-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Hai să discutăm despre centrul tău
+                </h2>
+                <p class="text-xl text-blue-100">
+                    Completează formularul și te contactăm în maxim 24 de ore
+                </p>
+            </div>
+  <!---
+            <form id="contact-form"  action="https://formspree.io/f/mwpaerde" method="POST" class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Nume complet *</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Telefon *</label>
+                        <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Numele centrului</label>
+                        <input type="text" name="center" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Număr de terapeuți</label>
+                    <select name="therapists" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition">
+                        <option value="">Selectează...</option>
+                        <option value="1-3">1-3 terapeuți</option>
+                        <option value="4-10">4-10 terapeuți</option>
+                        <option value="11-20">11-20 terapeuți</option>
+                        <option value="20+">Peste 20 terapeuți</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Mesaj</label>
+                    <textarea name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition" placeholder="Spune-ne mai multe despre nevoile tale..."></textarea>
+                </div>
+
+                <div class="mb-6">
+                    <label class="flex items-start">
+                        <input type="checkbox" name="gdpr" required class="mt-1 mr-3 w-5 h-5 text-[#2860AC] border-gray-300 rounded focus:ring-[#2860AC]">
+                        <span class="text-sm text-gray-600">
+                            Sunt de acord cu prelucrarea datelor personale conform GDPR și cu <a href="#" class="text-[#2860AC] hover:underline">politica de confidențialitate</a>
+                        </span>
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full bg-[#2860AC] hover:bg-blue-600 text-white font-bold py-4 rounded-full transition shadow-lg hover:shadow-xl text-lg">
+                    Trimite Solicitarea
+                </button>
+                <p id="form-message" 
+                class="mt-4 text-sm font-medium opacity-0 transition-opacity duration-500 px-4 py-2 rounded-md">
+                </p>
+
+                <p class="text-center text-sm text-gray-600 mt-6">
+                    Sau sună direct la <a href="tel:+40746060987" class="text-[#2860AC] font-semibold hover:underline">+40 746 060 987</a>
+                </p>
+            </form>-->
+
+            <form id="contact-form" action="https://formspree.io/f/mwpaerde" method="POST" class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Nume complet *</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Telefon *</label>
+                        <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Numele centrului</label>
+                        <input type="text" name="center" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Număr de terapeuți</label>
+                    <select name="therapists" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition">
+                        <option value="">Selectează...</option>
+                        <option value="1-3">1-3 terapeuți</option>
+                        <option value="4-10">4-10 terapeuți</option>
+                        <option value="11-20">11-20 terapeuți</option>
+                        <option value="20+">Peste 20 terapeuți</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Mesaj</label>
+                    <textarea name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2860AC] focus:border-transparent transition" placeholder="Spune-ne mai multe despre nevoile tale..."></textarea>
+                </div>
+                
+                <!-- your other form fields go here -->
+                <button type="submit" class="w-full bg-[#2860AC] hover:bg-blue-600 text-white font-bold py-4 rounded-full transition shadow-lg hover:shadow-xl text-lg">Send</button>
+                                <!-- Inline message with fade transition -->
+                    <p id="form-message" 
+                    class="mt-4 text-sm font-medium opacity-0 transition-opacity duration-500 px-4 py-2 rounded-md">
+                    </p>
+            </form>
+    
+  
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">Tempo</h3>
+                    <p class="text-sm leading-relaxed">
+                        Platforma completă de management pentru centre de terapie moderne.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Produs</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#features" class="hover:text-white transition">Funcționalități</a></li>
+                        <li><a href="#faq" class="hover:text-white transition">Întrebări Frecvente</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">Prețuri</a></li>
+                        <li><a href="http://www.tempoapp.ro/demo" class="hover:text-white transition">Demo</a></li>
+                        <li><a href="#" class="hover:text-white transition">Actualizări</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Companie</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Despre noi</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cariere</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Termeni și condiții</a></li>
+                        <li><a href="#" class="hover:text-white transition">Politica de confidențialitate</a></li>
+                        <li><a href="#" class="hover:text-white transition">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm">&copy; 2025 Tempo. Toate drepturile rezervate.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-white transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-white transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 16.892c-2.102.144-6.784.144-8.883 0C5.282 16.736 5.017 15.622 5 12c.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0C18.718 7.264 18.982 8.378 19 12c-.018 3.629-.285 4.736-2.559 4.892zM10 9.658l4.917 2.338L10 14.342V9.658z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+      
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+    <script>
+const form = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  formMessage.classList.remove('text-green-400', 'text-red-400');
+  formMessage.style.opacity = 0;
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) { 
+      formMessage.textContent = '✅ Message sent! Thank you.';
+      formMessage.className = 'mt-4 text-sm font-medium opacity-0 transition-opacity duration-500 px-4 py-2 rounded-md text-white bg-green-500';
+      form.reset();
+    } else {
+      formMessage.textContent = '⚠️ Oops! There was a problem sending your message.';
+      formMessage.className = 'mt-4 text-sm font-medium opacity-0 transition-opacity duration-500 px-4 py-2 rounded-md text-white bg-red-500';
+    }
+  } catch (err) {
+    formMessage.textContent = '⚠️ Oops! There was a problem sending your message.';
+    formMessage.className = 'mt-4 text-sm font-medium opacity-0 transition-opacity duration-500 px-4 py-2 rounded-md text-white bg-red-500';
+    console.error(err);
+  }
+
+  // Fade in
+  requestAnimationFrame(() => {
+    formMessage.style.opacity = 1;
+  });
+
+  // Optional: fade out after 5 seconds
+  setTimeout(() => {
+    formMessage.style.opacity = 0;
+  }, 5000);
+});
+</script>
+</body>
+</html>
