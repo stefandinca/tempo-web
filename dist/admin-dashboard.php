@@ -375,6 +375,93 @@ requireAuth(); // Redirect to login if not authenticated
         .clients-section {
             margin-top: 2rem;
         }
+
+        .expiring-soon {
+            background-color: #fed7d7 !important;
+        }
+
+        .expiring-soon:hover {
+            background-color: #fc8181 !important;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .header h1 {
+                font-size: 1.25rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            .card h2 {
+                font-size: 1.25rem;
+            }
+
+            .table-container {
+                font-size: 0.875rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .table-container table {
+                min-width: 800px;
+            }
+
+            th, td {
+                padding: 0.5rem 0.25rem;
+                font-size: 0.75rem;
+                white-space: nowrap;
+            }
+
+            .btn-primary, .btn-secondary {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+                width: 100%;
+                margin-right: 0 !important;
+                margin-bottom: 0.5rem;
+            }
+
+            .card > div[style*="margin-bottom"] {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 1rem;
+                max-height: 85vh;
+            }
+
+            .modal-header h3 {
+                font-size: 1.25rem;
+            }
+
+            .form-input {
+                padding: 0.625rem;
+                font-size: 0.875rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -397,9 +484,9 @@ requireAuth(); // Redirect to login if not authenticated
             </div>
 
             <div class="stat-card">
-                <h3>Total Tables</h3>
-                <div class="value" id="totalTables">-</div>
-                <div class="label">Database Tables</div>
+                <h3>Total Subscribers</h3>
+                <div class="value" id="totalSubscribers">-</div>
+                <div class="label">Active Subscribers</div>
             </div>
 
             <div class="stat-card">
@@ -415,14 +502,6 @@ requireAuth(); // Redirect to login if not authenticated
             </div>
         </div>
 
-        <!-- Database Information -->
-        <div class="card">
-            <h2>Database Information</h2>
-            <div class="db-info" id="dbInfo">
-                <div class="loading">Loading database information...</div>
-            </div>
-        </div>
-
         <!-- Clients/Subscribers Section -->
         <div class="card">
             <h2>Clients / Subscribers</h2>
@@ -435,25 +514,11 @@ requireAuth(); // Redirect to login if not authenticated
             </div>
         </div>
 
-        <!-- Database Tables -->
+        <!-- Database Information -->
         <div class="card">
-            <h2>Database Tables</h2>
-            <div style="margin-bottom: 1rem;">
-                <button class="btn-primary" onclick="loadTables()">🔄 Refresh Tables</button>
-                <button class="btn-secondary" onclick="showQueryEditor()">📝 Run Query</button>
-            </div>
-            <div class="table-container" id="tablesContainer">
-                <div class="loading">Click "Refresh Tables" to load database tables...</div>
-            </div>
-        </div>
-
-        <!-- Quick Actions -->
-        <div class="card">
-            <h2>Quick Actions</h2>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <button class="btn-primary" onclick="testConnection()">🔌 Test Connection</button>
-                <button class="btn-primary" onclick="viewSystemInfo()">💻 System Info</button>
-                <button class="btn-secondary" onclick="window.location.href='/'">🏠 Back to Website</button>
+            <h2>Database Information</h2>
+            <div class="db-info" id="dbInfo">
+                <div class="loading">Loading database information...</div>
             </div>
         </div>
     </div>
@@ -496,9 +561,77 @@ requireAuth(); // Redirect to login if not authenticated
                     <input type="number" id="maxUsers" name="max_users" class="form-input" required min="0">
                 </div>
 
+                <div class="form-group">
+                    <label for="link">Link</label>
+                    <input type="text" id="link" name="link" class="form-input" maxlength="255" placeholder="https://example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="contactInfo">Contact Info</label>
+                    <input type="text" id="contactInfo" name="contact_info" class="form-input" maxlength="255" placeholder="email@example.com or phone">
+                </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn-cancel" onclick="closeSubscriberModal()">Cancel</button>
                     <button type="submit" class="btn-success">Save Subscriber</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Subscriber Modal -->
+    <div id="editSubscriberModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Subscriber</h3>
+                <button class="close-btn" onclick="closeEditSubscriberModal()">&times;</button>
+            </div>
+            <form id="editSubscriberForm">
+                <input type="hidden" id="editClientId" name="id">
+
+                <div class="form-group">
+                    <label for="editClientName">Name *</label>
+                    <input type="text" id="editClientName" name="name" class="form-input" required maxlength="255">
+                </div>
+
+                <div class="form-group">
+                    <label for="editDateCreated">Date Created *</label>
+                    <input type="datetime-local" id="editDateCreated" name="date_created" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editExpiry">Expiry Date *</label>
+                    <input type="date" id="editExpiry" name="expiry" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editSubscriptionType">Subscription Type *</label>
+                    <input type="text" id="editSubscriptionType" name="subscription_type" class="form-input" required maxlength="255" placeholder="e.g., Premium, Basic, Pro">
+                </div>
+
+                <div class="form-group">
+                    <label for="editMaxClients">Max Clients *</label>
+                    <input type="number" id="editMaxClients" name="max_clients" class="form-input" required min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="editMaxUsers">Max Users *</label>
+                    <input type="number" id="editMaxUsers" name="max_users" class="form-input" required min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="editLink">Link</label>
+                    <input type="text" id="editLink" name="link" class="form-input" maxlength="255" placeholder="https://example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="editContactInfo">Contact Info</label>
+                    <input type="text" id="editContactInfo" name="contact_info" class="form-input" maxlength="255" placeholder="email@example.com or phone">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel" onclick="closeEditSubscriberModal()">Cancel</button>
+                    <button type="submit" class="btn-success">Update Subscriber</button>
                 </div>
             </form>
         </div>
@@ -652,9 +785,45 @@ requireAuth(); // Redirect to login if not authenticated
         // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('subscriberModal');
+            const editModal = document.getElementById('editSubscriberModal');
             if (event.target === modal) {
                 closeSubscriberModal();
             }
+            if (event.target === editModal) {
+                closeEditSubscriberModal();
+            }
+        }
+
+        // Edit modal functions
+        function openEditSubscriberModal(client) {
+            const modal = document.getElementById('editSubscriberModal');
+
+            // Populate form fields with existing data
+            document.getElementById('editClientId').value = client.id;
+            document.getElementById('editClientName').value = client.name || '';
+
+            // Convert date_created to datetime-local format
+            if (client.date_created) {
+                const dateCreated = new Date(client.date_created);
+                document.getElementById('editDateCreated').value = dateCreated.toISOString().slice(0, 16);
+            }
+
+            // Set expiry date
+            document.getElementById('editExpiry').value = client.expiry || '';
+
+            document.getElementById('editSubscriptionType').value = client.subscription_type || '';
+            document.getElementById('editMaxClients').value = client.max_clients || 0;
+            document.getElementById('editMaxUsers').value = client.max_users || 0;
+            document.getElementById('editLink').value = client.link || '';
+            document.getElementById('editContactInfo').value = client.contact_info || '';
+
+            modal.classList.add('show');
+        }
+
+        function closeEditSubscriberModal() {
+            const modal = document.getElementById('editSubscriberModal');
+            modal.classList.remove('show');
+            document.getElementById('editSubscriberForm').reset();
         }
 
         // Handle subscriber form submission
@@ -668,7 +837,9 @@ requireAuth(); // Redirect to login if not authenticated
                 expiry: formData.get('expiry'),
                 subscription_type: formData.get('subscription_type'),
                 max_clients: parseInt(formData.get('max_clients')),
-                max_users: parseInt(formData.get('max_users'))
+                max_users: parseInt(formData.get('max_users')),
+                link: formData.get('link') || '',
+                contact_info: formData.get('contact_info') || ''
             };
 
             try {
@@ -695,6 +866,51 @@ requireAuth(); // Redirect to login if not authenticated
             }
         });
 
+        // Handle edit subscriber form submission
+        document.getElementById('editSubscriberForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const data = {
+                id: parseInt(formData.get('id')),
+                name: formData.get('name'),
+                date_created: formData.get('date_created'),
+                expiry: formData.get('expiry'),
+                subscription_type: formData.get('subscription_type'),
+                max_clients: parseInt(formData.get('max_clients')),
+                max_users: parseInt(formData.get('max_users')),
+                link: formData.get('link') || '',
+                contact_info: formData.get('contact_info') || ''
+            };
+
+            console.log('Updating subscriber with data:', data);
+
+            try {
+                const response = await fetch('/admin-api.php?action=update-subscriber', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                console.log('Update response:', result);
+
+                if (result.success) {
+                    alert('✅ Subscriber updated successfully!');
+                    closeEditSubscriberModal();
+                    loadClients(); // Reload the clients table
+                } else {
+                    console.error('Update failed:', result);
+                    alert('❌ Error: ' + (result.message || 'Failed to update subscriber'));
+                }
+            } catch (error) {
+                console.error('Error updating subscriber:', error);
+                alert('❌ Error updating subscriber. Please try again.');
+            }
+        });
+
         // Load clients data
         async function loadClients() {
             document.getElementById('clientsContainer').innerHTML = '<div class="loading">Loading clients...</div>';
@@ -704,6 +920,9 @@ requireAuth(); // Redirect to login if not authenticated
                 const data = await response.json();
 
                 if (data.success && data.data.length > 0) {
+                    // Update total subscribers count
+                    document.getElementById('totalSubscribers').textContent = data.data.length;
+
                     let html = '<table><thead><tr>';
                     html += '<th>ID</th>';
                     html += '<th>Name</th>';
@@ -712,10 +931,26 @@ requireAuth(); // Redirect to login if not authenticated
                     html += '<th>Subscription Type</th>';
                     html += '<th>Max Clients</th>';
                     html += '<th>Max Users</th>';
+                    html += '<th>Link</th>';
+                    html += '<th>Contact Info</th>';
+                    html += '<th>Actions</th>';
                     html += '</tr></thead><tbody>';
 
+                    const today = new Date();
+                    const tenDaysFromNow = new Date();
+                    tenDaysFromNow.setDate(today.getDate() + 10);
+
                     data.data.forEach(client => {
-                        html += '<tr>';
+                        // Check if expiry is within 10 days
+                        let rowClass = '';
+                        if (client.expiry) {
+                            const expiryDate = new Date(client.expiry);
+                            if (expiryDate <= tenDaysFromNow) {
+                                rowClass = ' class="expiring-soon"';
+                            }
+                        }
+
+                        html += `<tr${rowClass}>`;
                         html += `<td>${client.id || '-'}</td>`;
                         html += `<td><strong>${client.name || '-'}</strong></td>`;
                         html += `<td>${client.date_created || '-'}</td>`;
@@ -723,12 +958,16 @@ requireAuth(); // Redirect to login if not authenticated
                         html += `<td>${client.subscription_type || '-'}</td>`;
                         html += `<td>${client.max_clients || '0'}</td>`;
                         html += `<td>${client.max_users || '0'}</td>`;
+                        html += `<td>${client.link ? `<a href="${client.link}" target="_blank" style="color: #667eea;">${client.link}</a>` : '-'}</td>`;
+                        html += `<td>${client.contact_info || '-'}</td>`;
+                        html += `<td><button class="btn-secondary" style="padding: 0.5rem 1rem; margin: 0;" onclick='openEditSubscriberModal(${JSON.stringify(client)})'>✏️ Edit</button></td>`;
                         html += '</tr>';
                     });
 
                     html += '</tbody></table>';
                     document.getElementById('clientsContainer').innerHTML = html;
                 } else {
+                    document.getElementById('totalSubscribers').textContent = '0';
                     document.getElementById('clientsContainer').innerHTML = '<div class="loading">No clients found. Click "Add Subscriber" to add one.</div>';
                 }
             } catch (error) {
@@ -739,6 +978,7 @@ requireAuth(); // Redirect to login if not authenticated
 
         // Load initial data
         loadDatabaseInfo();
+        loadClients(); // Auto-load clients on page load
     </script>
 </body>
 </html>

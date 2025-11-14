@@ -30,6 +30,10 @@ switch ($action) {
         getClients();
         break;
 
+    case 'update-subscriber':
+        updateSubscriber();
+        break;
+
     default:
         sendJson(['success' => false, 'message' => 'Invalid action'], 400);
 }
@@ -245,9 +249,11 @@ function addSubscriber() {
     // Convert datetime-local format to MySQL datetime format
     $dateCreated = date('Y-m-d H:i:s', strtotime($data['date_created']));
     $expiry = $data['expiry'];
+    $link = isset($data['link']) ? $data['link'] : '';
+    $contactInfo = isset($data['contact_info']) ? $data['contact_info'] : '';
 
     // Prepare and execute insert query
-    $stmt = $conn->prepare("INSERT INTO subscribers (name, date_created, expiry, subscription_type, max_clients, max_users) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO subscribers (name, date_created, expiry, subscription_type, max_clients, max_users, link, contact_info) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
     if (!$stmt) {
         sendJson([
@@ -257,13 +263,15 @@ function addSubscriber() {
     }
 
     $stmt->bind_param(
-        'ssssii',
+        'ssssiiss',
         $data['name'],
         $dateCreated,
         $expiry,
         $data['subscription_type'],
         $data['max_clients'],
-        $data['max_users']
+        $data['max_users'],
+        $link,
+        $contactInfo
     );
 
     if ($stmt->execute()) {
@@ -312,5 +320,97 @@ function getClients() {
         'success' => true,
         'data' => $clients
     ]);
+}
+
+/**
+ * Update an existing subscriber in the subscribers table
+ */
+function updateSubscriber() {
+    // Get JSON input
+    $json = file_get_contents('php://input');
+    $data = json_decode($json, true);
+
+    if (!$data) {
+        sendJson([
+            'success' => false,
+            'message' => 'Invalid JSON data'
+        ], 400);
+    }
+
+    // Validate required fields
+    $required = ['id', 'name', 'date_created', 'expiry', 'subscription_type', 'max_clients', 'max_users'];
+    foreach ($required as $field) {
+        // For numeric fields, allow 0 as valid
+        if (!isset($data[$field])) {
+            sendJson([
+                'success' => false,
+                'message' => "Missing required field: {$field}"
+            ], 400);
+        }
+        // For string fields, check if empty
+        if (in_array($field, ['name', 'date_created', 'expiry', 'subscription_type']) && $data[$field] === '') {
+            sendJson([
+                'success' => false,
+                'message' => "Field cannot be empty: {$field}"
+            ], 400);
+        }
+    }
+
+    $conn = getDbConnection();
+
+    if (!$conn) {
+        sendJson([
+            'success' => false,
+            'message' => 'Database connection failed'
+        ], 500);
+    }
+
+    // Convert datetime-local format to MySQL datetime format
+    $dateCreated = date('Y-m-d H:i:s', strtotime($data['date_created']));
+    $expiry = $data['expiry'];
+    $link = isset($data['link']) ? $data['link'] : '';
+    $contactInfo = isset($data['contact_info']) ? $data['contact_info'] : '';
+
+    // Prepare and execute update query
+    $stmt = $conn->prepare("UPDATE subscribers SET name = ?, date_created = ?, expiry = ?, subscription_type = ?, max_clients = ?, max_users = ?, link = ?, contact_info = ? WHERE id = ?");
+
+    if (!$stmt) {
+        sendJson([
+            'success' => false,
+            'message' => 'Failed to prepare statement: ' . $conn->error
+        ], 500);
+    }
+
+    $stmt->bind_param(
+        'ssssiissi',
+        $data['name'],
+        $dateCreated,
+        $expiry,
+        $data['subscription_type'],
+        $data['max_clients'],
+        $data['max_users'],
+        $link,
+        $contactInfo,
+        $data['id']
+    );
+
+    if ($stmt->execute()) {
+        if ($stmt->affected_rows > 0) {
+            sendJson([
+                'success' => true,
+                'message' => 'Subscriber updated successfully'
+            ]);
+        } else {
+            sendJson([
+                'success' => false,
+                'message' => 'No changes made or subscriber not found'
+            ], 404);
+        }
+    } else {
+        sendJson([
+            'success' => false,
+            'message' => 'Failed to update subscriber: ' . $stmt->error
+        ], 500);
+    }
 }
 ?>
