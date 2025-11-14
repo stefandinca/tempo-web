@@ -1,16 +1,24 @@
 {
-  "name": "2",
+  "name": "tempo-web",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Tempo Web Application with Super Admin",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "npx @tailwindcss/cli -i ./src/input.css -o ./dist/tailwind-styles.css  --minify"
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/tailwind-styles.css --minify",
+    "start": "node server.js",
+    "dev:server": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.17",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5",
+    "express-session": "^1.17.3",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "body-parser": "^1.20.2"
   }
 }
