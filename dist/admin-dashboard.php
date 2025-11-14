@@ -532,6 +532,11 @@ requireAuth(); // Redirect to login if not authenticated
             </div>
             <form id="subscriberForm">
                 <div class="form-group">
+                    <label for="subscriberId">Subscriber ID</label>
+                    <input type="text" id="subscriberId" name="subscriber_id" class="form-input" maxlength="255" placeholder="Optional unique identifier">
+                </div>
+
+                <div class="form-group">
                     <label for="clientName">Name *</label>
                     <input type="text" id="clientName" name="name" class="form-input" required maxlength="255">
                 </div>
@@ -588,6 +593,11 @@ requireAuth(); // Redirect to login if not authenticated
             </div>
             <form id="editSubscriberForm">
                 <input type="hidden" id="editClientId" name="id">
+
+                <div class="form-group">
+                    <label for="editSubscriberId">Subscriber ID</label>
+                    <input type="text" id="editSubscriberId" name="subscriber_id" class="form-input" maxlength="255" placeholder="Optional unique identifier">
+                </div>
 
                 <div class="form-group">
                     <label for="editClientName">Name *</label>
@@ -800,6 +810,7 @@ requireAuth(); // Redirect to login if not authenticated
 
             // Populate form fields with existing data
             document.getElementById('editClientId').value = client.id;
+            document.getElementById('editSubscriberId').value = client.subscriber_id || '';
             document.getElementById('editClientName').value = client.name || '';
 
             // Convert date_created to datetime-local format
@@ -832,6 +843,7 @@ requireAuth(); // Redirect to login if not authenticated
 
             const formData = new FormData(e.target);
             const data = {
+                subscriber_id: formData.get('subscriber_id') || '',
                 name: formData.get('name'),
                 date_created: formData.get('date_created'),
                 expiry: formData.get('expiry'),
@@ -873,6 +885,7 @@ requireAuth(); // Redirect to login if not authenticated
             const formData = new FormData(e.target);
             const data = {
                 id: parseInt(formData.get('id')),
+                subscriber_id: formData.get('subscriber_id') || '',
                 name: formData.get('name'),
                 date_created: formData.get('date_created'),
                 expiry: formData.get('expiry'),
@@ -925,6 +938,7 @@ requireAuth(); // Redirect to login if not authenticated
 
                     let html = '<table><thead><tr>';
                     html += '<th>ID</th>';
+                    html += '<th>Subscriber ID</th>';
                     html += '<th>Name</th>';
                     html += '<th>Date Created</th>';
                     html += '<th>Expiry</th>';
@@ -952,6 +966,7 @@ requireAuth(); // Redirect to login if not authenticated
 
                         html += `<tr${rowClass}>`;
                         html += `<td>${client.id || '-'}</td>`;
+                        html += `<td>${client.subscriber_id || '-'}</td>`;
                         html += `<td><strong>${client.name || '-'}</strong></td>`;
                         html += `<td>${client.date_created || '-'}</td>`;
                         html += `<td>${client.expiry || '-'}</td>`;

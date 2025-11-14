@@ -249,11 +249,12 @@ function addSubscriber() {
     // Convert datetime-local format to MySQL datetime format
     $dateCreated = date('Y-m-d H:i:s', strtotime($data['date_created']));
     $expiry = $data['expiry'];
+    $subscriberId = isset($data['subscriber_id']) ? $data['subscriber_id'] : '';
     $link = isset($data['link']) ? $data['link'] : '';
     $contactInfo = isset($data['contact_info']) ? $data['contact_info'] : '';
 
     // Prepare and execute insert query
-    $stmt = $conn->prepare("INSERT INTO subscribers (name, date_created, expiry, subscription_type, max_clients, max_users, link, contact_info) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO subscribers (subscriber_id, name, date_created, expiry, subscription_type, max_clients, max_users, link, contact_info) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     if (!$stmt) {
         sendJson([
@@ -263,7 +264,8 @@ function addSubscriber() {
     }
 
     $stmt->bind_param(
-        'ssssiiss',
+        'sssssiiss',
+        $subscriberId,
         $data['name'],
         $dateCreated,
         $expiry,
@@ -368,11 +370,12 @@ function updateSubscriber() {
     // Convert datetime-local format to MySQL datetime format
     $dateCreated = date('Y-m-d H:i:s', strtotime($data['date_created']));
     $expiry = $data['expiry'];
+    $subscriberId = isset($data['subscriber_id']) ? $data['subscriber_id'] : '';
     $link = isset($data['link']) ? $data['link'] : '';
     $contactInfo = isset($data['contact_info']) ? $data['contact_info'] : '';
 
     // Prepare and execute update query
-    $stmt = $conn->prepare("UPDATE subscribers SET name = ?, date_created = ?, expiry = ?, subscription_type = ?, max_clients = ?, max_users = ?, link = ?, contact_info = ? WHERE id = ?");
+    $stmt = $conn->prepare("UPDATE subscribers SET subscriber_id = ?, name = ?, date_created = ?, expiry = ?, subscription_type = ?, max_clients = ?, max_users = ?, link = ?, contact_info = ? WHERE id = ?");
 
     if (!$stmt) {
         sendJson([
@@ -382,7 +385,8 @@ function updateSubscriber() {
     }
 
     $stmt->bind_param(
-        'ssssiissi',
+        'sssssiissi',
+        $subscriberId,
         $data['name'],
         $dateCreated,
         $expiry,
