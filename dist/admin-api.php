@@ -22,6 +22,14 @@ switch ($action) {
         getTableData($tableName);
         break;
 
+    case 'add-subscriber':
+        addSubscriber();
+        break;
+
+    case 'get-clients':
+        getClients();
+        break;
+
     default:
         sendJson(['success' => false, 'message' => 'Invalid action'], 400);
 }
@@ -196,6 +204,113 @@ function getTableData($tableName) {
             'limit' => $limit,
             'offset' => $offset
         ]
+    ]);
+}
+
+/**
+ * Add a new subscriber to the clients table
+ */
+function addSubscriber() {
+    // Get JSON input
+    $json = file_get_contents('php://input');
+    $data = json_decode($json, true);
+
+    if (!$data) {
+        sendJson([
+            'success' => false,
+            'message' => 'Invalid JSON data'
+        ], 400);
+    }
+
+    // Validate required fields
+    $required = ['name', 'date_created', 'expiry', 'subscription_type', 'max_clients', 'max_users'];
+    foreach ($required as $field) {
+        if (!isset($data[$field]) || $data[$field] === '') {
+            sendJson([
+                'success' => false,
+                'message' => "Missing required field: {$field}"
+            ], 400);
+        }
+    }
+
+    $conn = getDbConnection();
+
+    if (!$conn) {
+        sendJson([
+            'success' => false,
+            'message' => 'Database connection failed'
+        ], 500);
+    }
+
+    // Convert datetime-local format to MySQL datetime format
+    $dateCreated = date('Y-m-d H:i:s', strtotime($data['date_created']));
+    $expiry = $data['expiry'];
+
+    // Prepare and execute insert query
+    $stmt = $conn->prepare("INSERT INTO subscribers (name, date_created, expiry, subscription_type, max_clients, max_users) VALUES (?, ?, ?, ?, ?, ?)");
+
+    if (!$stmt) {
+        sendJson([
+            'success' => false,
+            'message' => 'Failed to prepare statement: ' . $conn->error
+        ], 500);
+    }
+
+    $stmt->bind_param(
+        'ssssii',
+        $data['name'],
+        $dateCreated,
+        $expiry,
+        $data['subscription_type'],
+        $data['max_clients'],
+        $data['max_users']
+    );
+
+    if ($stmt->execute()) {
+        sendJson([
+            'success' => true,
+            'message' => 'Subscriber added successfully',
+            'data' => ['id' => $conn->insert_id]
+        ]);
+    } else {
+        sendJson([
+            'success' => false,
+            'message' => 'Failed to add subscriber: ' . $stmt->error
+        ], 500);
+    }
+}
+
+/**
+ * Get all clients from the subscribers table
+ */
+function getClients() {
+    $conn = getDbConnection();
+
+    if (!$conn) {
+        sendJson([
+            'success' => false,
+            'message' => 'Database connection failed'
+        ], 500);
+    }
+
+    // Get all clients ordered by date_created descending
+    $result = $conn->query("SELECT * FROM subscribers ORDER BY date_created DESC");
+
+    if (!$result) {
+        sendJson([
+            'success' => false,
+            'message' => 'Failed to get clients: ' . $conn->error
+        ], 500);
+    }
+
+    $clients = [];
+    while ($row = $result->fetch_assoc()) {
+        $clients[] = $row;
+    }
+
+    sendJson([
+        'success' => true,
+        'data' => $clients
     ]);
 }
 ?>

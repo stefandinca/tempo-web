@@ -230,6 +230,151 @@ requireAuth(); // Redirect to login if not authenticated
         tr:hover {
             background: #f7fafc;
         }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #718096;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .close-btn:hover {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 0.875rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-success {
+            background: #48bb78;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            flex: 1;
+            transition: background 0.2s;
+        }
+
+        .btn-success:hover {
+            background: #38a169;
+        }
+
+        .btn-cancel {
+            background: #e2e8f0;
+            color: #2d3748;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            flex: 1;
+            transition: background 0.2s;
+        }
+
+        .btn-cancel:hover {
+            background: #cbd5e0;
+        }
+
+        .clients-section {
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -278,6 +423,18 @@ requireAuth(); // Redirect to login if not authenticated
             </div>
         </div>
 
+        <!-- Clients/Subscribers Section -->
+        <div class="card">
+            <h2>Clients / Subscribers</h2>
+            <div style="margin-bottom: 1rem;">
+                <button class="btn-primary" onclick="openAddSubscriberModal()">➕ Add Subscriber</button>
+                <button class="btn-secondary" onclick="loadClients()">🔄 Refresh Clients</button>
+            </div>
+            <div class="table-container" id="clientsContainer">
+                <div class="loading">Click "Refresh Clients" to load subscribers...</div>
+            </div>
+        </div>
+
         <!-- Database Tables -->
         <div class="card">
             <h2>Database Tables</h2>
@@ -298,6 +455,52 @@ requireAuth(); // Redirect to login if not authenticated
                 <button class="btn-primary" onclick="viewSystemInfo()">💻 System Info</button>
                 <button class="btn-secondary" onclick="window.location.href='/'">🏠 Back to Website</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Add Subscriber Modal -->
+    <div id="subscriberModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Subscriber</h3>
+                <button class="close-btn" onclick="closeSubscriberModal()">&times;</button>
+            </div>
+            <form id="subscriberForm">
+                <div class="form-group">
+                    <label for="clientName">Name *</label>
+                    <input type="text" id="clientName" name="name" class="form-input" required maxlength="255">
+                </div>
+
+                <div class="form-group">
+                    <label for="dateCreated">Date Created *</label>
+                    <input type="datetime-local" id="dateCreated" name="date_created" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="expiry">Expiry Date *</label>
+                    <input type="date" id="expiry" name="expiry" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subscriptionType">Subscription Type *</label>
+                    <input type="text" id="subscriptionType" name="subscription_type" class="form-input" required maxlength="255" placeholder="e.g., Premium, Basic, Pro">
+                </div>
+
+                <div class="form-group">
+                    <label for="maxClients">Max Clients *</label>
+                    <input type="number" id="maxClients" name="max_clients" class="form-input" required min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="maxUsers">Max Users *</label>
+                    <input type="number" id="maxUsers" name="max_users" class="form-input" required min="0">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel" onclick="closeSubscriberModal()">Cancel</button>
+                    <button type="submit" class="btn-success">Save Subscriber</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -420,6 +623,117 @@ requireAuth(); // Redirect to login if not authenticated
                 }
             } catch (error) {
                 console.error('Logout error:', error);
+            }
+        }
+
+        // Modal functions
+        function openAddSubscriberModal() {
+            const modal = document.getElementById('subscriberModal');
+            const now = new Date();
+
+            // Set default date created to now
+            const dateCreatedInput = document.getElementById('dateCreated');
+            dateCreatedInput.value = now.toISOString().slice(0, 16);
+
+            // Set default expiry to 1 year from now
+            const expiryDate = new Date();
+            expiryDate.setFullYear(expiryDate.getFullYear() + 1);
+            document.getElementById('expiry').value = expiryDate.toISOString().slice(0, 10);
+
+            modal.classList.add('show');
+        }
+
+        function closeSubscriberModal() {
+            const modal = document.getElementById('subscriberModal');
+            modal.classList.remove('show');
+            document.getElementById('subscriberForm').reset();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('subscriberModal');
+            if (event.target === modal) {
+                closeSubscriberModal();
+            }
+        }
+
+        // Handle subscriber form submission
+        document.getElementById('subscriberForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const data = {
+                name: formData.get('name'),
+                date_created: formData.get('date_created'),
+                expiry: formData.get('expiry'),
+                subscription_type: formData.get('subscription_type'),
+                max_clients: parseInt(formData.get('max_clients')),
+                max_users: parseInt(formData.get('max_users'))
+            };
+
+            try {
+                const response = await fetch('/admin-api.php?action=add-subscriber', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('✅ Subscriber added successfully!');
+                    closeSubscriberModal();
+                    loadClients(); // Reload the clients table
+                } else {
+                    alert('❌ Error: ' + (result.message || 'Failed to add subscriber'));
+                }
+            } catch (error) {
+                console.error('Error adding subscriber:', error);
+                alert('❌ Error adding subscriber. Please try again.');
+            }
+        });
+
+        // Load clients data
+        async function loadClients() {
+            document.getElementById('clientsContainer').innerHTML = '<div class="loading">Loading clients...</div>';
+
+            try {
+                const response = await fetch('/admin-api.php?action=get-clients');
+                const data = await response.json();
+
+                if (data.success && data.data.length > 0) {
+                    let html = '<table><thead><tr>';
+                    html += '<th>ID</th>';
+                    html += '<th>Name</th>';
+                    html += '<th>Date Created</th>';
+                    html += '<th>Expiry</th>';
+                    html += '<th>Subscription Type</th>';
+                    html += '<th>Max Clients</th>';
+                    html += '<th>Max Users</th>';
+                    html += '</tr></thead><tbody>';
+
+                    data.data.forEach(client => {
+                        html += '<tr>';
+                        html += `<td>${client.id || '-'}</td>`;
+                        html += `<td><strong>${client.name || '-'}</strong></td>`;
+                        html += `<td>${client.date_created || '-'}</td>`;
+                        html += `<td>${client.expiry || '-'}</td>`;
+                        html += `<td>${client.subscription_type || '-'}</td>`;
+                        html += `<td>${client.max_clients || '0'}</td>`;
+                        html += `<td>${client.max_users || '0'}</td>`;
+                        html += '</tr>';
+                    });
+
+                    html += '</tbody></table>';
+                    document.getElementById('clientsContainer').innerHTML = html;
+                } else {
+                    document.getElementById('clientsContainer').innerHTML = '<div class="loading">No clients found. Click "Add Subscriber" to add one.</div>';
+                }
+            } catch (error) {
+                console.error('Error loading clients:', error);
+                document.getElementById('clientsContainer').innerHTML = '<div class="loading" style="color: #c33;">Error loading clients</div>';
             }
         }
 
