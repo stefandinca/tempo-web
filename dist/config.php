@@ -11,8 +11,8 @@ define('DB_NAME', 'incjzljm_tempo_app_main');
 define('DB_PORT', 3306);
 
 // Admin credentials
-define('ADMIN_USERNAME', 'tempoadmin'); // CHANGE THIS
-define('ADMIN_PASSWORD', 'forcezar!'); // CHANGE THIS
+define('ADMIN_USERNAME', '------'); // CHANGE THIS
+define('ADMIN_PASSWORD', '-------'); // CHANGE THIS
 
 // Session configuration
 define('SESSION_NAME', 'tempo_admin_session');
